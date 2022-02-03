@@ -28,3 +28,9 @@
   cursor: pointer;
   width: 150px;
 }
+
+@media (max-width: 420px) {
+  .animation-nav-container {
+    display: none;
+  }
+}

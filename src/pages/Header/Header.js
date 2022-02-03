@@ -38,7 +38,11 @@ const Header = () => {
             <div className="header-title">Ercan Er </div>
           </motion.div>
 
-          <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
+          <motion.nav
+            className="animation-nav-container"
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+          >
             <nav className="main-nav">
               <a href="/html/">HTML</a>
               <a href="/css/">CSS</a>

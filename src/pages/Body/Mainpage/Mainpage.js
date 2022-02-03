@@ -89,6 +89,7 @@ const bioMessages = {
 
 const Mainpage = () => {
   const [slider, setSlider] = useState(() => "medium");
+  const [isSocialOpen, setIsSocialOpen] = useState(false);
 
   const onChangeSliderHandler = ({ target }) => {
     setSlider(target.value);
@@ -96,21 +97,37 @@ const Mainpage = () => {
 
   return (
     <div className="section-profile">
-      <div>
-        <IconComponent iconName="github" />
-        <IconComponent iconName="twitter" />
-        <IconComponent iconName="instagram" />
-      </div>
-
       <motion.div
         id="profile-image-container"
         whileTap={{ scale: 0.8, rotate: 1800, borderRadius: "100%" }}
+        onTap={() => setIsSocialOpen((prevState) => !prevState)}
       >
-        <img src={profile} alt="profile" className="profile-img" />
+        {isSocialOpen && (
+          <motion.div
+            id="icon-container-animation-div"
+            initial={{ opacity: 0, scaleZ: 0, x: -80, z: -10 }}
+            animate={{ opacity: 1, scaleZ: 1, x: 20, z: 20 }}
+            transition={{
+              type: "spring",
+              stiffness: 960,
+              damping: 200,
+            }}
+          >
+            <IconComponent id="github" iconName="github" />
+            <IconComponent id="twitter" iconName="twitter" />
+            <IconComponent id="instagram" iconName="instagram" />
+          </motion.div>
+        )}
+        <img
+          src={profile}
+          alt="profile"
+          className="profile-img"
+          loading="lazy"
+        />
       </motion.div>
       <div className="bio-main-container">
         <h1 className="defination-person">
-          Hello{" "}
+          Hello
           <motion.div
             whileHover={{
               scale: 1,
@@ -124,7 +141,7 @@ const Mainpage = () => {
             }}
           >
             👋
-          </motion.div>{" "}
+          </motion.div>
           I'am Ercan Er.
         </h1>
         <p style={{ color: "#fff", opacity: "0.5" }}>Adjust bio length:</p>
