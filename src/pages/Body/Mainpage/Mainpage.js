@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./mainpage.css";
 import profile from "../../../assets/img/profile.png";
 import { motion } from "framer-motion";
 import IconComponent from "../../../components/Icon";
+import { ThemeContext } from "../../../App";
 
 const bioMessages = {
   shortest: (
@@ -89,6 +90,7 @@ const bioMessages = {
 
 const Mainpage = () => {
   const [slider, setSlider] = useState(() => "medium");
+  const theme = useContext(ThemeContext);
   const [isSocialOpen, setIsSocialOpen] = useState(false);
 
   const onChangeSliderHandler = ({ target }) => {
@@ -102,22 +104,6 @@ const Mainpage = () => {
         whileTap={{ scale: 0.8, rotate: 1800, borderRadius: "100%" }}
         onTap={() => setIsSocialOpen((prevState) => !prevState)}
       >
-        {isSocialOpen && (
-          <motion.div
-            id="icon-container-animation-div"
-            initial={{ opacity: 0, scaleZ: 0, x: -80, z: -10 }}
-            animate={{ opacity: 1, scaleZ: 1, x: 20, z: 20 }}
-            transition={{
-              type: "spring",
-              stiffness: 960,
-              damping: 200,
-            }}
-          >
-            <IconComponent id="github" iconName="github" />
-            <IconComponent id="twitter" iconName="twitter" />
-            <IconComponent id="instagram" iconName="instagram" />
-          </motion.div>
-        )}
         <img
           src={profile}
           alt="profile"
@@ -125,8 +111,9 @@ const Mainpage = () => {
           loading="lazy"
         />
       </motion.div>
+
       <div className="bio-main-container">
-        <h1 className="defination-person">
+        <h1 className={"defination-person-" + theme}>
           Hello
           <motion.div
             whileHover={{
@@ -144,6 +131,22 @@ const Mainpage = () => {
           </motion.div>
           I'am Ercan Er.
         </h1>
+        {isSocialOpen && (
+          <motion.div
+            id="icon-container-animation-div"
+            initial={{ opacity: 0, scaleZ: 0, x: -80, z: -10 }}
+            animate={{ opacity: 1, scaleZ: 1, x: 20, z: 20 }}
+            transition={{
+              type: "spring",
+              stiffness: 960,
+              damping: 200,
+            }}
+          >
+            <IconComponent id="github" iconName="github" />
+            <IconComponent id="twitter" iconName="twitter" />
+            <IconComponent id="instagram" iconName="instagram" />
+          </motion.div>
+        )}
         <p style={{ color: "#fff", opacity: "0.5" }}>Adjust bio length:</p>
         <div className="slider-button-list">
           <p style={{ color: "#fff", opacity: "0.5" }}>shortest</p>
@@ -220,7 +223,7 @@ const Mainpage = () => {
           <p style={{ color: "#fff", opacity: "0.5" }}>longest</p>
         </div>
 
-        <div className="bioMessages">{bioMessages[slider]}</div>
+        <div className={"bioMessages-" + theme}>{bioMessages[slider]}</div>
       </div>
     </div>
   );

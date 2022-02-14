@@ -1,4 +1,11 @@
-.App {
+.Applight {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.Appdark {
   display: flex;
   flex-direction: column;
   background-color: #171321;
