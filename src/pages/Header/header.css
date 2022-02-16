@@ -6,6 +6,7 @@
   background-color: #171321;
   min-height: 100px;
   width: 100%;
+  transition: background-color 1s ease-in-out;
 }
 
 .header-container-light {
@@ -16,6 +17,7 @@
   background-color: #ffffff;
   min-height: 100px;
   width: 100%;
+  transition: background-color 1s ease-in;
 }
 
 .main-nav {

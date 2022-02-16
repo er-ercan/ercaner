@@ -1,0 +1,29 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  flex-wrap: wrap;
+  background-color: #171321;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.logo-container {
+  position: absolute;
+  top: -60px;
+}
+
+.logo-card {
+  width: 110px;
+}
+
+.card-title {
+  padding-top: 80px;
+  color: #fff;
+  font-size: 24px;
+}
+.card-text {
+  color: #fff;
+}

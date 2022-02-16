@@ -147,9 +147,25 @@ const Mainpage = () => {
             <IconComponent id="instagram" iconName="instagram" />
           </motion.div>
         )}
-        <p style={{ color: "#fff", opacity: "0.5" }}>Adjust bio length:</p>
+        <p
+          style={
+            theme === "dark"
+              ? { color: "#fff", opacity: "0.5" }
+              : { color: "#000", opacity: "0.5" }
+          }
+        >
+          Adjust bio length:
+        </p>
         <div className="slider-button-list">
-          <p style={{ color: "#fff", opacity: "0.5" }}>shortest</p>
+          <p
+            style={
+              theme === "dark"
+                ? { color: "#fff", opacity: "0.5" }
+                : { color: "#000", opacity: "0.5" }
+            }
+          >
+            shortest
+          </p>
           <div className="radio-container">
             <input
               type="radio"
@@ -220,7 +236,15 @@ const Mainpage = () => {
               <span className="slider-label-text" />
             </label>
           </div>
-          <p style={{ color: "#fff", opacity: "0.5" }}>longest</p>
+          <p
+            style={
+              theme === "dark"
+                ? { color: "#fff", opacity: "0.5" }
+                : { color: "#000", opacity: "0.5" }
+            }
+          >
+            longest
+          </p>
         </div>
 
         <div className={"bioMessages-" + theme}>{bioMessages[slider]}</div>

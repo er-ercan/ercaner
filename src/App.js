@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Experience from "./pages/Body/Experience/Experience";
 import Mainpage from "./pages/Body/Mainpage/Mainpage";
 import Header from "./pages/Header/Header";
 
@@ -17,6 +18,9 @@ function App() {
         <main className="main-container">
           <section className="section-profile-container">
             <Mainpage />
+          </section>
+          <section className="section-my-experience">
+            <Experience />
           </section>
         </main>
       </div>
