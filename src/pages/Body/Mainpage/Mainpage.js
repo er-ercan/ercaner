@@ -4,6 +4,7 @@ import profile from "../../../assets/img/profile.png";
 import { motion } from "framer-motion";
 import IconComponent from "../../../components/Icon";
 import { ThemeContext } from "../../../App";
+import arrow from "../../../assets/img/arrow.png";
 
 const bioMessages = {
   shortest: (
@@ -99,6 +100,9 @@ const Mainpage = () => {
 
   return (
     <div className="section-profile">
+      <div className="arrow-img-container">
+        <img className="arrow-image" src={arrow} alt="profile" />
+      </div>
       <motion.div
         id="profile-image-container"
         whileTap={{ scale: 0.8, rotate: 1800, borderRadius: "100%" }}

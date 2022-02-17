@@ -136,6 +136,17 @@
   width: 300px;
 }
 
+.arrow-image {
+  width: 200px;
+  transform: rotate(161deg);
+}
+
+.arrow-img-container {
+  position: absolute;
+  top: 100px;
+  left: 165px;
+}
+
 @media (max-width: 768px) {
   .section-profile {
     display: flex;
