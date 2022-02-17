@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Experience from "./pages/Body/Experience/Experience";
 import Mainpage from "./pages/Body/Mainpage/Mainpage";
@@ -11,6 +11,7 @@ function App() {
   function toggleStyle() {
     setStyle((style) => (style === "light" ? "dark" : "light"));
   }
+
   return (
     <ThemeContext.Provider value={style}>
       <div className={"App" + style}>

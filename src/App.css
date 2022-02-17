@@ -28,11 +28,14 @@
   width: 100%;
   height: 100%;
   scroll-snap-align: start;
+  position: relative;
 }
 
 .section-my-experience {
   display: block;
   width: 100%;
+  height: calc(100% - 0px);
+
   background-color: #0c314a;
   scroll-snap-align: end;
 }

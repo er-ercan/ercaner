@@ -1,6 +1,7 @@
 .experience-container {
-  height: 100vh;
+  height: 77vh;
   justify-content: space-around;
   display: flex;
   align-items: center;
+  gap: 20px;
 }
